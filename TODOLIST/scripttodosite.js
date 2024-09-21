@@ -10,7 +10,7 @@ submit.addEventListener('click', (event) => {
 
     let todo = input.value.trim(); 
 
-    if (taskarray.includes(todo) || todo === '') {
+    if (taskarray.includes(todo) || completedtask.includes(todo) ||todo === '') {
         alert('Task already present or empty task!'); 
         input.value = '';
         return;
@@ -96,7 +96,7 @@ function MarkNotDone(task, row, currentTableBody, newTableBody) {
 
 function deleteCompletedTask(task, row, tableBody) {
     tableBody.removeChild(row);
-    taskarray.splice(taskarray.indexOf(task), 1);
+    completedtask.splice(completedtask.indexOf(task), 1);
 }
 
 function deleteTask(task, row, tableBody) {
